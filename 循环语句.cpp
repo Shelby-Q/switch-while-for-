@@ -157,3 +157,30 @@ int main()
 	}
 	return 0;
 }
+/输入密码 实现登陆 三次机会
+int main()
+{
+	int i = 0;
+	int a = 3;
+	char password[20] = { 0 };
+	for (i = 0; i < 3; i++)
+	{
+		printf("请输入密码：>");
+		scanf("%s", password);
+		if(strcmp(password,"123456") == 0) // 判断2个字符串是否相等
+		{
+			printf("密码输入正确，登陆成功！\n");
+			break;
+		}
+		else
+		{
+			a--;
+			printf("密码输入错误，您还剩%d次机会！\n",a);
+		}
+	}
+	if (i == 3)
+	{
+		printf("三次输入错误，退出程序！");
+	}
+	return 0;
+}
