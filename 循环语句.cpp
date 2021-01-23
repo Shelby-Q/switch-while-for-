@@ -106,81 +106,81 @@
 
 
 //二分查找
-int main()
-{
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int k = 7;
-	int size = sizeof(arr) / sizeof(arr[0]);//计算元素个数
-	int left = 0;//左下标
-	int right = size - 1;
+//int main()
+// {
+// 	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+// 	int k = 7;
+// 	int size = sizeof(arr) / sizeof(arr[0]);//计算元素个数
+// 	int left = 0;//左下标
+// 	int right = size - 1;
 	
-	while (left <= right) 
-	{
-		int mid = (left + right) / 2;//中间元素下标
-		if (arr[mid] > k)
-		{
-			right = mid - 1;
-		}
-		else if (arr[mid] < k)
-		{
-			left = mid + 1;
-		}
-		else
-		{
-			printf("找到了 下标是：%d\n", mid);
-			break;
-		}
-		if (left > right)
-		{
-			printf("找不到\n");
-		}
-	}
-	return 0;
-}
+// 	while (left <= right) 
+// 	{
+// 		int mid = (left + right) / 2;//中间元素下标
+// 		if (arr[mid] > k)
+// 		{
+// 			right = mid - 1;
+// 		}
+// 		else if (arr[mid] < k)
+// 		{
+// 			left = mid + 1;
+// 		}
+// 		else
+// 		{
+// 			printf("找到了 下标是：%d\n", mid);
+// 			break;
+// 		}
+// 		if (left > right)
+// 		{
+// 			printf("找不到\n");
+// 		}
+// 	}
+// 	return 0;
+// }
 //编写代码 演示多字符从两端移动 向中间汇聚
-int main()
-{
-	char arr1[] = "comecomecomecome";
-	char arr2[] = "################";
-	int left = 0;
-	int right = strlen(arr1)-1;//计算给定字符串的长度,直到碰到第一个字符串结束符'\0'为止，然后返回计数器值(长度不包含'\0')
+// int main()
+// {
+// 	char arr1[] = "comecomecomecome";
+// 	char arr2[] = "################";
+// 	int left = 0;
+// 	int right = strlen(arr1)-1;//计算给定字符串的长度,直到碰到第一个字符串结束符'\0'为止，然后返回计数器值(长度不包含'\0')
 
-	while (left <= right)
-	{
-		arr2[left] = arr1[left];
-		arr2[right] = arr1[right];
-		printf("%s \n", arr2);
-		Sleep(800);//休眠 暂停函数 单位毫秒
-		system("cls");//system("CLS")可以实现清屏操作
-		left++;
-		right--;
-	}
-	return 0;
-}
-/输入密码 实现登陆 三次机会
-int main()
-{
-	int i = 0;
-	int a = 3;
-	char password[20] = { 0 };
-	for (i = 0; i < 3; i++)
-	{
-		printf("请输入密码：>");
-		scanf("%s", password);
-		if(strcmp(password,"123456") == 0) // 判断2个字符串是否相等
-		{
-			printf("密码输入正确，登陆成功！\n");
-			break;
-		}
-		else
-		{
-			a--;
-			printf("密码输入错误，您还剩%d次机会！\n",a);
-		}
-	}
-	if (i == 3)
-	{
-		printf("三次输入错误，退出程序！");
-	}
-	return 0;
-}
+// 	while (left <= right)
+// 	{
+// 		arr2[left] = arr1[left];
+// 		arr2[right] = arr1[right];
+// 		printf("%s \n", arr2);
+// 		Sleep(800);//休眠 暂停函数 单位毫秒
+// 		system("cls");//system("CLS")可以实现清屏操作
+// 		left++;
+// 		right--;
+// 	}
+// 	return 0;
+// }
+//输入密码 实现登陆 三次机会
+// int main()
+// {
+// 	int i = 0;
+// 	int a = 3;
+// 	char password[20] = { 0 };
+// 	for (i = 0; i < 3; i++)
+// 	{
+// 		printf("请输入密码：>");
+// 		scanf("%s", password);
+// 		if(strcmp(password,"123456") == 0) // 判断2个字符串是否相等
+// 		{
+// 			printf("密码输入正确，登陆成功！\n");
+// 			break;
+// 		}
+// 		else
+// 		{
+// 			a--;
+// 			printf("密码输入错误，您还剩%d次机会！\n",a);
+// 		}
+// 	}
+// 	if (i == 3)
+// 	{
+// 		printf("三次输入错误，退出程序！");
+// 	}
+// 	return 0;
+// }
