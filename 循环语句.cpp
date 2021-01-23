@@ -5,29 +5,29 @@
 //	int ret = 0;
 //	int ch = 0;
 //	char password[20] = { 0 };
-//	printf("ÇëÊäÈëÄúµÄÃÜÂë:<\n");
-//	scanf("%s", password);//ÊäÈëÃÜÂëºó ´æ·ÅÔÚpasswordÖĞ
-//	//»º³åÇøÓĞÒ»¸ö '\n' ÊäÈëÃÜÂëºóÇÃ»÷»Ø³µ²úÉúÒ»¸ö'\n'
-//	//ĞèÒªÒ»¸ögetchar¶ÁÈ¡µô
+//	printf("è¯·è¾“å…¥æ‚¨çš„å¯†ç :<\n");
+//	scanf("%s", password);//è¾“å…¥å¯†ç å å­˜æ”¾åœ¨passwordä¸­
+//	//ç¼“å†²åŒºæœ‰ä¸€ä¸ª '\n' è¾“å…¥å¯†ç åæ•²å‡»å›è½¦äº§ç”Ÿä¸€ä¸ª'\n'
+//	//éœ€è¦ä¸€ä¸ªgetcharè¯»å–æ‰
 //	while ((ch = getchar())!= '\n')
 //	{
 //		;
 //	}
-//	printf("ÇëÈ·ÈÏ(Y/N):>\n");
+//	printf("è¯·ç¡®è®¤(Y/N):>\n");
 //	ret = getchar();
 //	if (ret == 'Y')
 //	{
-//		printf("È·ÈÏ³É¹¦\n");
+//		printf("ç¡®è®¤æˆåŠŸ\n");
 //	}
 //	else
 //	{
-//		printf("·ÅÆúÈ·ÈÏ\n");
+//		printf("æ”¾å¼ƒç¡®è®¤\n");
 //	}
 //	return 0;
 //}
 
 
-//¾Å¾Å³Ë·¨±í
+//ä¹ä¹ä¹˜æ³•è¡¨
 //int main()
 //{
 //	int a = 0;
@@ -66,7 +66,7 @@
 //}
 
 
-//nµÄ½×³Ë
+//nçš„é˜¶ä¹˜
 //int main()
 //{
 //	int a = 1;
@@ -77,13 +77,13 @@
 //	{
 //			a = a * i;
 //	}
-//	printf("nµÄ½×³Ë=%d", a);
+//	printf("nçš„é˜¶ä¹˜=%d", a);
 //	return 0;
 //}
 
 
 
-//nµÄ½×³ËÀÛ¼Ó
+//nçš„é˜¶ä¹˜ç´¯åŠ 
 //int main()
 //{
 //	int a = 1;
@@ -105,18 +105,18 @@
 //}
 
 
-//¶ş·Ö²éÕÒ
+//äºŒåˆ†æŸ¥æ‰¾
 int main()
 {
 	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
 	int k = 7;
-	int size = sizeof(arr) / sizeof(arr[0]);//¼ÆËãÔªËØ¸öÊı
-	int left = 0;//×óÏÂ±ê
+	int size = sizeof(arr) / sizeof(arr[0]);//è®¡ç®—å…ƒç´ ä¸ªæ•°
+	int left = 0;//å·¦ä¸‹æ ‡
 	int right = size - 1;
 	
 	while (left <= right) 
 	{
-		int mid = (left + right) / 2;//ÖĞ¼äÔªËØÏÂ±ê
+		int mid = (left + right) / 2;//ä¸­é—´å…ƒç´ ä¸‹æ ‡
 		if (arr[mid] > k)
 		{
 			right = mid - 1;
@@ -127,13 +127,33 @@ int main()
 		}
 		else
 		{
-			printf("ÕÒµ½ÁË ÏÂ±êÊÇ£º%d\n", mid);
+			printf("æ‰¾åˆ°äº† ä¸‹æ ‡æ˜¯ï¼š%d\n", mid);
 			break;
 		}
 		if (left > right)
 		{
-			printf("ÕÒ²»µ½\n");
+			printf("æ‰¾ä¸åˆ°\n");
 		}
+	}
+	return 0;
+}
+//ç¼–å†™ä»£ç  æ¼”ç¤ºå¤šå­—ç¬¦ä»ä¸¤ç«¯ç§»åŠ¨ å‘ä¸­é—´æ±‡èš
+int main()
+{
+	char arr1[] = "comecomecomecome";
+	char arr2[] = "################";
+	int left = 0;
+	int right = strlen(arr1)-1;//è®¡ç®—ç»™å®šå­—ç¬¦ä¸²çš„é•¿åº¦,ç›´åˆ°ç¢°åˆ°ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ç»“æŸç¬¦'\0'ä¸ºæ­¢ï¼Œç„¶åè¿”å›è®¡æ•°å™¨å€¼(é•¿åº¦ä¸åŒ…å«'\0')
+
+	while (left <= right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s \n", arr2);
+		Sleep(800);//ä¼‘çœ  æš‚åœå‡½æ•° å•ä½æ¯«ç§’
+		system("cls");//system("CLS")å¯ä»¥å®ç°æ¸…å±æ“ä½œ
+		left++;
+		right--;
 	}
 	return 0;
 }
