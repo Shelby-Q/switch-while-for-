@@ -36,7 +36,7 @@
 //		for (int j = 1; j <= a; j++) {
 //
 //			
-//			printf("%d * %d = %d",j,a,j*a);
+//			printf("%d * %d = %-2d",j,a,j*a);
 //			printf("   ");
 //			//j + " * " + a + " = " + (j * a) + "\t"
 //		}
